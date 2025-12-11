@@ -4,7 +4,6 @@ import java.sql.SQLException;
 
 public class DatabaseConnection {
     // 1. DATABASE CONFIGURATION
-    // Env-aware config with sensible defaults for local dev
     private static final String URL = System.getenv().getOrDefault(
             "HOSPITAL_DB_URL",
             "jdbc:postgresql://localhost:5432/hospital_db");
@@ -19,7 +18,6 @@ public class DatabaseConnection {
             
             // 3. CONNECT
             connection = DriverManager.getConnection(URL, USER, PASSWORD);
-            // System.out.println("DEBUG: Connection Successful!"); // Uncomment to test
         } catch (ClassNotFoundException e) {
             System.out.println("[ERROR] PostgreSQL JDBC Driver not found. Did you add the JAR?");
             e.printStackTrace();

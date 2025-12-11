@@ -151,11 +151,11 @@ public class HospitalManagement {
     // --- 5. SEARCH PATIENT ---
     private static void searchPatientsByName(Scanner scanner) {
         System.out.print("Enter Name to Search: ");
-        scanner.nextLine(); // consume newline
+        scanner.nextLine(); 
         String nameQuery = scanner.nextLine();
 
         try (Connection conn = DatabaseConnection.getConnection()) {
-            // using ILIKE for case-insensitive search in PostgreSQL
+           
             String query = "SELECT * FROM patients WHERE name ILIKE ?"; 
             PreparedStatement pstmt = conn.prepareStatement(query);
             pstmt.setString(1, "%" + nameQuery + "%");
