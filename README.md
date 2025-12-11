@@ -41,3 +41,14 @@ CREATE TABLE patients (
     age INT,
     gender VARCHAR(20)
 );
+
+
+
+
+
+
+2. Run the Application
+Open your terminal in the project folder and run these commands:
+javac -cp ".;postgresql-42.7.2-all.jar" HospitalSwingApp.java
+then run
+java -cp ".;postgresql-42.7.2-all.jar" HospitalSwingApp
